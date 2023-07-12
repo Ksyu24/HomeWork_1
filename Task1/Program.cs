@@ -1,4 +1,8 @@
-﻿
+﻿// Задача 2: Напишите программу, которая на вход принимает два числа и выдаёт, какое число большее, а какое меньшее.
+// a = 5; b = 7 -> max = 7
+// a = 2 b = 10 -> max = 10
+// a = -9 b = -3 -> max = -3
+
 Console.WriteLine("Введите первое число: ");
 double a = Convert.ToDouble(Console.ReadLine());
 
@@ -17,4 +21,7 @@ else {
     min=a;
     }
 if (min==max) { Console.WriteLine("Данные числа равные"); }
-else {Console.WriteLine("Большее число: " + max + ". Меньшее число: " + min);}
+else {
+    Console.WriteLine($"Большее число: {max}. Меньшее число: {min}");
+}
+    
