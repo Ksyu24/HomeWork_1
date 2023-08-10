@@ -66,12 +66,12 @@ int[,] MultiplieArray(int[,] arr1, int[,] arr2)
     return arr;
 }
 
-int FindElMas(int[,] arr1, int[,] arr2, int pozM, int pozN)
+int FindElMas(int[,] arr1, int[,] arr2, int posM, int posN)
 {
     int sum = 0;
     for (int j = 0; j < arr1.GetLength(1); j++)
     {
-        sum = sum + (arr1[pozM, j] * arr2[j, pozN]);
+        sum = sum + (arr1[posM, j] * arr2[j, posN]);
 
     }
     return sum;

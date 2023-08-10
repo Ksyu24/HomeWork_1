@@ -21,7 +21,7 @@ void FillingArray(int[,,] arr)
 				while (!isUnik)
 				{
 					newElArr = rnd.Next(10, 100);
-					isUnik = IsUnic(arr, newElArr, i, j, z);
+					isUnik = IsUnic(arr, newElArr);
 				}
 
 				arr[i, j, z] = newElArr;
@@ -47,7 +47,7 @@ void Print(int[,,] arr)
 	}
 }
 
-bool IsUnic(int[,,] arr, int el, int Pozi, int Pozj, int Pozz)
+bool IsUnic(int[,,] arr, int el)
 {
 	bool isUnic = true;
 	for (int i = 0; i < arr.GetLength(0); i++)

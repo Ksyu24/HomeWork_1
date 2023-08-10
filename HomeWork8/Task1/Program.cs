@@ -64,12 +64,12 @@ void SortsInDescendingOrder(int[,] arr)
 }
 
 
-bool IsDescending(int[,] arr, int Pozi)
+bool IsDescending(int[,] arr, int Posi)
 {
 	bool isDescending=true;
 	for(int j=0; j<arr.GetLength(1)-1; j++)
 	{
-		if(arr[Pozi,j]<arr[Pozi,j+1])
+		if(arr[Posi,j]<arr[Posi,j+1])
 		{
 			isDescending=false;
 			break;

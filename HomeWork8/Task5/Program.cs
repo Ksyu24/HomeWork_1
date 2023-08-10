@@ -38,103 +38,103 @@ void PrintArray(int[,] arr)
 }
 
 
-bool IsRightFree(int[,] arr, int Pozi, int Pozj)
+bool IsRightFree(int[,] arr, int Posi, int Posj)
 {
     bool isFree = false;
-    if ((Pozj + 1 < arr.GetLength(1)) && (arr[Pozi, Pozj] > arr[Pozi, Pozj + 1]) && (arr[Pozi, Pozj + 1] == 0))
+    if ((Posj + 1 < arr.GetLength(1)) && (arr[Posi, Posj] > arr[Posi, Posj + 1]) && (arr[Posi, Posj + 1] == 0))
     {
         isFree = true;
     }
     return isFree;
 }
 
-bool IsBottomFree(int[,] arr, int Pozi, int Pozj)
+bool IsBottomFree(int[,] arr, int Posi, int Posj)
 {
     bool isFree = false;
-    if ((Pozi + 1 < arr.GetLength(0)) && (arr[Pozi, Pozj] > arr[Pozi + 1, Pozj]) && (arr[Pozi + 1, Pozj] == 0))
+    if ((Posi + 1 < arr.GetLength(0)) && (arr[Posi, Posj] > arr[Posi + 1, Posj]) && (arr[Posi + 1, Posj] == 0))
     {
         isFree = true;
     }
     return isFree;
 }
 
-bool IsLeftFree(int[,] arr, int Pozi, int Pozj)
+bool IsLeftFree(int[,] arr, int Posi, int Posj)
 {
     bool isFree = false;
-    if ((Pozj - 1 > -1) && (arr[Pozi, Pozj] > arr[Pozi, Pozj - 1]) && (arr[Pozi, Pozj - 1] == 0))
+    if ((Posj - 1 > -1) && (arr[Posi, Posj] > arr[Posi, Posj - 1]) && (arr[Posi, Posj - 1] == 0))
     {
         isFree = true;
     }
     return isFree;
 }
 
-bool IsTopFree(int[,] arr, int Pozi, int Pozj)
+bool IsTopFree(int[,] arr, int Posi, int Posj)
 {
     bool isFree = false;
-    if ((Pozi - 1 > -1) && (arr[Pozi, Pozj] > arr[Pozi - 1, Pozj]) && (arr[Pozi - 1, Pozj] == 0))
+    if ((Posi - 1 > -1) && (arr[Posi, Posj] > arr[Posi - 1, Posj]) && (arr[Posi - 1, Posj] == 0))
     {
         isFree = true;
     }
     return isFree;
 }
 
-void GoRight(int[,] arr, int Pozi, int Pozj)
+void GoRight(int[,] arr, int Posi, int Posj)
 {
-    if (Pozj + 1 < arr.GetLength(1))
+    if (Posj + 1 < arr.GetLength(1))
     {
-        arr[Pozi, Pozj + 1] = arr[Pozi, Pozj] + 1;
-        if (IsRightFree(arr, Pozi, Pozj + 1))
+        arr[Posi, Posj + 1] = arr[Posi, Posj] + 1;
+        if (IsRightFree(arr, Posi, Posj + 1))
         {
-            GoRight(arr, Pozi, Pozj + 1);
+            GoRight(arr, Posi, Posj + 1);
         }
-        else if (IsBottomFree(arr, Pozi, Pozj + 1))
+        else if (IsBottomFree(arr, Posi, Posj + 1))
         {
-            GoBottom(arr, Pozi, Pozj + 1);
+            GoBottom(arr, Posi, Posj + 1);
         }
     }
 }
-void GoBottom(int[,] arr, int Pozi, int Pozj)
+void GoBottom(int[,] arr, int Posi, int Posj)
 {
-    if (Pozi + 1 < arr.GetLength(0))
+    if (Posi + 1 < arr.GetLength(0))
     {
-        arr[Pozi + 1, Pozj] = arr[Pozi, Pozj] + 1;
-        if (IsBottomFree(arr, Pozi + 1, Pozj))
+        arr[Posi + 1, Posj] = arr[Posi, Posj] + 1;
+        if (IsBottomFree(arr, Posi + 1, Posj))
         {
-            GoBottom(arr, Pozi + 1, Pozj);
+            GoBottom(arr, Posi + 1, Posj);
         }
-        else if (IsLeftFree(arr, Pozi + 1, Pozj))
+        else if (IsLeftFree(arr, Posi + 1, Posj))
         {
-            GoLeft(arr, Pozi + 1, Pozj);
+            GoLeft(arr, Posi + 1, Posj);
         }
     }
 }
-void GoLeft(int[,] arr, int Pozi, int Pozj)
+void GoLeft(int[,] arr, int Posi, int Posj)
 {
-    if (Pozj - 1 > -1)
+    if (Posj - 1 > -1)
     {
-        arr[Pozi, Pozj - 1] = arr[Pozi, Pozj] + 1;
-        if (IsLeftFree(arr, Pozi, Pozj - 1))
+        arr[Posi, Posj - 1] = arr[Posi, Posj] + 1;
+        if (IsLeftFree(arr, Posi, Posj - 1))
         {
-            GoLeft(arr, Pozi, Pozj - 1);
+            GoLeft(arr, Posi, Posj - 1);
         }
-        else if (IsTopFree(arr, Pozi, Pozj - 1))
+        else if (IsTopFree(arr, Posi, Posj - 1))
         {
-            GoTop(arr, Pozi, Pozj - 1);
+            GoTop(arr, Posi, Posj - 1);
         }
     }
 }
-void GoTop(int[,] arr, int Pozi, int Pozj)
+void GoTop(int[,] arr, int Posi, int Posj)
 {
-    if (Pozi - 1 > -1)
+    if (Posi - 1 > -1)
     {
-        arr[Pozi - 1, Pozj] = arr[Pozi, Pozj] + 1;
-        if (IsTopFree(arr, Pozi - 1, Pozj))
+        arr[Posi - 1, Posj] = arr[Posi, Posj] + 1;
+        if (IsTopFree(arr, Posi - 1, Posj))
         {
-            GoTop(arr, Pozi - 1, Pozj);
+            GoTop(arr, Posi - 1, Posj);
         }
-        else if (IsRightFree(arr, Pozi - 1, Pozj))
+        else if (IsRightFree(arr, Posi - 1, Posj))
         {
-            GoRight(arr, Pozi - 1, Pozj);
+            GoRight(arr, Posi - 1, Posj);
         }
     }
 }

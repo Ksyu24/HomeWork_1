@@ -49,7 +49,7 @@ int SumArrayEllement(int[,] arr, int i)
 
 int FindStringWithMinSum(int[,] arr)
 {
-    int str = -1;
+    int strnum = -1;
     int minSum = SumArrayEllement(arr, 0);
 
     for (int i = 1; i < arr.GetLength(0); i++)
@@ -64,9 +64,9 @@ int FindStringWithMinSum(int[,] arr)
     {
         if (minSum == SumArrayEllement(arr, i))
         {
-            str = i + 1;
+            strnum = i + 1;
         }
     }
-    return str;
+    return strnum;
 }
 
