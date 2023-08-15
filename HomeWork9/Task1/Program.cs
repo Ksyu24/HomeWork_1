@@ -5,24 +5,24 @@
 Console.WriteLine("Введите натуральное число: ");
 try
 {
-	int number=Convert.ToInt32(Console.ReadLine());
-	if (number>0)
-	{
+    int number = Convert.ToInt32(Console.ReadLine());
+    if (number > 0)
+    {
         Console.Write($"N = {number} -> ");
-		PrintNum(number);
-	}
-	else {Console.WriteLine("Введено ненатуральное число!");}
+        PrintNum(number);
+    }
+    else { Console.WriteLine("Введено ненатуральное число!"); }
 }
 catch
 {
-	Console.WriteLine("Введено некорректное значение!");
+    Console.WriteLine("Введено некорректное значение!");
 }
 
 void PrintNum(int num)
 {
-	if(num==0) return;
-	PrintNum(num-1);
-	Console.Write($"{num} ");
+    if (num == 0) return;
+    PrintNum(num - 1);
+    Console.Write($"{num}  ");
 }
 
 
